@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit do Afiliado – Aprova Prefeitura</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --g:#00E57A;--g2:#00B85E;
+  --bg:#080B0A;--bg2:#0D110F;--bg3:#111714;--bg4:#161C19;
+  --border:rgba(0,229,122,0.13);--border2:rgba(0,229,122,0.28);
+  --txt:#E8F5EE;--txt2:#8BA898;--txt3:#56735F;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;line-height:1.65;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='.028'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+
+.c{max-width:780px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+/* HEADER */
+.header{
+  padding:28px 24px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.04em}
+.logo span{color:var(--g)}
+.badge{background:rgba(0,229,122,.08);border:1px solid var(--border2);color:var(--g);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:100px}
+
+/* HERO */
+.hero{padding:56px 0 48px;text-align:center}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,7vw,72px);line-height:.95;letter-spacing:.02em;margin-bottom:16px}
+.hero h1 span{color:var(--g)}
+.hero p{font-size:16px;color:var(--txt2);max-width:480px;margin:0 auto}
+
+/* NUMBERS */
+.nums{display:flex;justify-content:center;gap:0;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin:40px 0}
+.num{flex:1;text-align:center;padding:24px 16px;border-right:1px solid var(--border)}
+.num:last-child{border-right:none}
+.num-val{font-family:'Bebas Neue',sans-serif;font-size:38px;color:var(--g);line-height:1}
+.num-label{font-size:12px;color:var(--txt3);margin-top:4px;font-weight:500}
+@media(max-width:500px){.nums{flex-direction:column}.num{border-right:none;border-bottom:1px solid var(--border)}.num:last-child{border-bottom:none}}
+
+/* SECTION */
+.section{padding:48px 0;border-top:1px solid var(--border)}
+.sec-tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--g);margin-bottom:8px}
+h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,4vw,42px);line-height:1.05;letter-spacing:.02em;margin-bottom:6px}
+.sec-sub{font-size:14px;color:var(--txt2);margin-bottom:28px}
+
+/* CONTENT BLOCKS */
+.block{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:28px;margin-bottom:16px;position:relative}
+.block-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.block-label::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* COPY BOX */
+.copy-box{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:18px 20px;font-size:14px;color:var(--txt2);line-height:1.7;white-space:pre-wrap;position:relative;margin-bottom:10px}
+.copy-box strong{color:var(--txt);display:block;margin-bottom:4px}
+
+.copy-btn{
+  background:transparent;border:1px solid var(--border2);color:var(--g);
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;
+  padding:8px 18px;border-radius:6px;cursor:pointer;
+  transition:background .15s,color .15s;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.copy-btn:hover{background:var(--g);color:#000}
+.copy-btn.copied{background:var(--g);color:#000}
+
+/* FRAMES */
+.frames{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px}
+@media(max-width:560px){.frames{grid-template-columns:1fr}}
+.frame{
+  background:var(--bg2);border:1px solid var(--border);border-radius:10px;
+  padding:20px 16px;text-align:center;position:relative;
+}
+.frame-num{
+  width:28px;height:28px;border-radius:50%;
+  background:rgba(0,229,122,.1);border:1px solid var(--border2);
+  color:var(--g);font-size:13px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 12px;
+}
+.frame p{font-size:13px;color:var(--txt2);line-height:1.6}
+.frame p strong{color:var(--txt)}
+
+/* RULES */
+.rules{display:flex;flex-direction:column;gap:10px}
+.rule{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--txt2)}
+.rule-icon{flex-shrink:0;font-size:16px;margin-top:2px}
+
+/* COMMISSION BOX */
+.comm-box{
+  background:rgba(0,229,122,.05);border:1px solid var(--border2);
+  border-radius:14px;padding:28px;text-align:center;
+}
+.comm-big{font-family:'Bebas Neue',sans-serif;font-size:72px;color:var(--g);line-height:1;letter-spacing:.02em}
+.comm-label{font-size:14px;color:var(--txt2);margin-top:4px}
+.comm-detail{font-size:13px;color:var(--txt3);margin-top:12px}
+
+/* LINK BOX */
+.link-box{
+  background:var(--bg3);border:1px solid var(--border2);border-radius:10px;
+  padding:16px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.link-url{font-size:13px;color:var(--txt2);font-family:monospace;flex:1;word-break:break-all}
+.link-url span{color:var(--g)}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;font-size:13px;color:var(--txt3)}
+footer a{color:var(--txt3);text-decoration:none}
+footer a:hover{color:var(--g)}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">Aprova <span>Prefeitura</span></div>
+  <div class="badge">Kit do Afiliado</div>
+</div>
+
+<section class="hero">
+  <div class="c">
+    <h1>Tudo que você precisa<br>pra <span>começar a vender</span></h1>
+    <p>Scripts prontos, roteiros e regras claras. Copie, adapte e poste — simples assim.</p>
+
+    <div class="nums">
+      <div class="num"><div class="num-val">40%</div><div class="num-label">Comissão por venda</div></div>
+      <div class="num"><div class="num-val">R$37</div><div class="num-label">Ticket — alta conversão</div></div>
+      <div class="num"><div class="num-val">7d</div><div class="num-label">Garantia ao comprador</div></div>
+      <div class="num"><div class="num-val">∞</div><div class="num-label">Acesso vitalício</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPTS -->
+<section class="section">
+  <div class="c">
+    <p class="sec-tag">Roteiros prontos</p>
+    <h2>Copie e use agora</h2>
+    <p class="sec-sub">Adapte o que quiser — o essencial já está aqui.</p>
+
+    <!-- STORIES -->
+    <div class="block">
+      <div class="block-label">📱 Stories — 3 frames</div>
+      <div class="frames">
+        <div class="frame">
+          <div class="frame-num">1</div>
+          <p><strong>Gancho</strong><br><br>"Você estuda pra concurso municipal mas sente que não avança?"</p>
+        </div>
+        <div class="frame">
+          <div class="frame-num">2</div>
+          <p><strong>Solução</strong><br><br>"Encontrei um curso de R$37 que ensina exatamente o método que faltava. Testei — vale demais."</p>
+        </div>
+        <div class="frame">
+          <div class="frame-num">3</div>
+          <p><strong>CTA</strong><br><br>"Link na bio / arrasta pra cima. Garantia de 7 dias — zero risco pra você."</p>
+        </div>
+      </div>
+      <button class="copy-btn" onclick="copyText('stories', this)">⧉ Copiar texto dos frames</button>
+    </div>
+
+    <!-- REELS / VIDEO CURTO -->
+    <div class="block">
+      <div class="block-label">🎬 Reels / TikTok — roteiro</div>
+      <div class="copy-box" id="reels">
+[0–3s — GANCHO]
+"Se você estuda pra concurso municipal e não tem um método, está perdendo tempo."
+
+[3–12s — PROBLEMA]
+"A maioria estuda tudo igual, sem saber o que cai mais, sem plano, sem estratégia. E reprova não por falta de esforço — por falta de método."
+
+[12–22s — SOLUÇÃO]
+"O Aprova Prefeitura é um curso de estratégia de estudos. Ele te ensina a analisar edital, montar plano de estudos e usar IA pra revisar mais rápido. São 10 aulas, acesso vitalício, por R$37,99."
+
+[22–28s — CTA]
+"Link na bio. Garantia de 7 dias — se não gostar, devolvem tudo."</div>
+      <button class="copy-btn" onclick="copyId('reels', this)">⧉ Copiar roteiro</button>
+    </div>
+
+    <!-- LEGENDA -->
+    <div class="block">
+      <div class="block-label">✍️ Legenda para feed / carrossel</div>
+      <div class="copy-box" id="legenda">Você estuda pra concurso municipal mas sente que falta alguma coisa?
+
+Provavelmente é método. Não é esforço — é estratégia.
+
+Encontrei o Aprova Prefeitura: um curso de R$37,99 focado em te ensinar a estudar certo pra concursos de prefeitura, câmara e autarquias.
+
+✔ 10 videoaulas com método completo
+✔ Checklist e plano de estudos prontos
+✔ 15 prompts de IA testados pra revisão
+✔ Acesso vitalício + garantia de 7 dias
+
+Link na bio. Por esse preço, não tem desculpa. 👇</div>
+      <button class="copy-btn" onclick="copyId('legenda', this)">⧉ Copiar legenda</button>
+    </div>
+
+    <!-- DESCRIÇÃO YOUTUBE -->
+    <div class="block">
+      <div class="block-label">▶️ Descrição / menção em vídeo YouTube</div>
+      <div class="copy-box" id="yt">🔗 APROVA PREFEITURA — Curso de método e estratégia pra concursos municipais
+👉 [SEU LINK AQUI]
+
+Por R$37,99 você tem acesso a 10 aulas, checklist, plano de estudos e pack de prompts de IA pra revisar mais rápido. Garantia total de 7 dias.</div>
+      <button class="copy-btn" onclick="copyId('yt', this)">⧉ Copiar descrição</button>
+    </div>
+  </div>
+</section>
+
+<!-- REGRAS -->
+<section class="section">
+  <div class="c">
+    <p class="sec-tag">Regras da parceria</p>
+    <h2>Simples e transparente</h2>
+    <p class="sec-sub">Sem letras miúdas.</p>
+
+    <div class="block">
+      <div class="rules">
+        <div class="rule"><div class="rule-icon">✅</div><div>Use <strong>sempre o seu link personalizado</strong> — é assim que as comissões são rastreadas automaticamente.</div></div>
+        <div class="rule"><div class="rule-icon">✅</div><div>Você pode adaptar os scripts à sua linguagem — o importante é manter as informações corretas (preço, garantia, o que está incluso).</div></div>
+        <div class="rule"><div class="rule-icon">✅</div><div>Pagamento automático pela plataforma — sem depender de transferência manual.</div></div>
+        <div class="rule"><div class="rule-icon">✅</div><div>Sem exclusividade — você pode divulgar outros produtos sem problema.</div></div>
+        <div class="rule"><div class="rule-icon">❌</div><div>Não altere o preço ou as condições do produto nas divulgações.</div></div>
+        <div class="rule"><div class="rule-icon">❌</div><div>Não use práticas de spam ou tráfego inválido — além de antiético, cancela as comissões.</div></div>
+        <div class="rule"><div class="rule-icon">❌</div><div>Não prometa resultados garantidos de aprovação — o produto é de método, não de conteúdo de matéria.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMISSÃO -->
+<section class="section">
+  <div class="c">
+    <p class="sec-tag">Comissão</p>
+    <h2>Quanto você ganha</h2>
+    <p class="sec-sub">Por cada venda gerada pelo seu link.</p>
+
+    <div class="comm-box">
+      <div class="comm-big">R$15</div>
+      <div class="comm-label">por venda · 40% de comissão sobre R$37,99</div>
+      <div class="comm-detail">10 vendas = R$150 &nbsp;·&nbsp; 50 vendas = R$760 &nbsp;·&nbsp; 100 vendas = R$1.520</div>
+    </div>
+  </div>
+</section>
+
+<!-- LINK -->
+<section class="section">
+  <div class="c">
+    <p class="sec-tag">Seu link</p>
+    <h2>Substitua pelo link real</h2>
+    <p class="sec-sub">Gerado pela Hotmart ou Kiwify após cadastro como afiliado.</p>
+    <div class="link-box">
+      <div class="link-url">https://<span>seulink.aprova</span>prefeitura.com.br/<span>?ref=SEUNOME</span></div>
+      <button class="copy-btn" style="flex-shrink:0" onclick="alert('Substitua pelo seu link real da plataforma.')">⧉ Copiar</button>
+    </div>
+  </div>
+</section>
+
+<!-- SUPORTE -->
+<section class="section">
+  <div class="c">
+    <p class="sec-tag">Dúvidas?</p>
+    <h2>Fale com a gente</h2>
+    <div class="block" style="font-size:14px;color:var(--txt2)">
+      Qualquer dúvida sobre comissão, pagamento ou divulgação — entre em contato direto.<br><br>
+      <strong style="color:var(--txt)">📧 suporte@aprovaprefeitura.com.br</strong><br>
+      <span style="color:var(--txt3);font-size:13px">Respondemos em até 24h úteis.</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Aprova Prefeitura · Kit exclusivo para afiliados</p>
+  <p style="margin-top:8px"><a href="#">Política de Privacidade</a> &nbsp;·&nbsp; <a href="#">Termos de Uso</a></p>
+</footer>
+
+<script>
+const storiesText = `FRAME 1:\n"Você estuda pra concurso municipal mas sente que não avança?"\n\nFRAME 2:\n"Encontrei um curso de R$37 que ensina exatamente o método que faltava. Testei — vale demais."\n\nFRAME 3:\n"Link na bio / arrasta pra cima. Garantia de 7 dias — zero risco pra você."`;
+
+function copyText(type, btn) {
+  let text = '';
+  if(type === 'stories') text = storiesText;
+  navigator.clipboard.writeText(text).then(()=>{
+    btn.textContent = '✓ Copiado!';
+    btn.classList.add('copied');
+    setTimeout(()=>{ btn.textContent = '⧉ Copiar texto dos frames'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+function copyId(id, btn) {
+  const el = document.getElementById(id);
+  navigator.clipboard.writeText(el.innerText).then(()=>{
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copiado!';
+    btn.classList.add('copied');
+    setTimeout(()=>{ btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
+</body>
+</html>
