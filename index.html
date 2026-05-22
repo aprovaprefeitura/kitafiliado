@@ -53,8 +53,8 @@ h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,4vw,42px);line-heigh
 .block-label::after{content:'';flex:1;height:1px;background:var(--border)}
 
 /* COPY BOX */
-.copy-box{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:18px 20px;font-size:14px;color:var(--txt2);line-height:1.7;white-space:pre-wrap;position:relative;margin-bottom:10px}
-.copy-box strong{color:var(--txt);display:block;margin-bottom:4px}
+.copy-box{display:block;width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:18px 20px;font-size:14px;color:var(--txt2);line-height:1.7;white-space:pre-wrap;position:relative;margin-bottom:10px;resize:none;font-family:'Plus Jakarta Sans',sans-serif;outline:none;cursor:text}
+.copy-box:focus{border-color:var(--border2)}
 
 .copy-btn{
   background:transparent;border:1px solid var(--border2);color:var(--g);
@@ -106,6 +106,15 @@ h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,4vw,42px);line-heigh
 .link-url{font-size:13px;color:var(--txt2);font-family:monospace;flex:1;word-break:break-all}
 .link-url span{color:var(--g)}
 
+/* FAQ */
+.faq-item{background:var(--bg3);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .2s}
+.faq-item:hover,.faq-item[open]{border-color:var(--border2)}
+.faq-item summary{padding:18px 22px;font-size:15px;font-weight:600;color:var(--txt);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'﹢';font-size:20px;color:var(--g);flex-shrink:0;line-height:1}
+.faq-item[open] summary::after{content:'﹣'}
+.faq-item p{padding:16px 22px 18px;font-size:14px;color:var(--txt2);line-height:1.7;border-top:1px solid var(--border)}
+
 /* FOOTER */
 footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;font-size:13px;color:var(--txt3)}
 footer a{color:var(--txt3);text-decoration:none}
@@ -123,12 +132,55 @@ footer a:hover{color:var(--g)}
   <div class="c">
     <h1>Tudo que você precisa<br>pra <span>começar a vender</span></h1>
     <p>Scripts prontos, roteiros e regras claras. Copie, adapte e poste — simples assim.</p>
-
     <div class="nums">
       <div class="num"><div class="num-val">40%</div><div class="num-label">Comissão por venda</div></div>
       <div class="num"><div class="num-val">R$37</div><div class="num-label">Ticket — alta conversão</div></div>
       <div class="num"><div class="num-val">7d</div><div class="num-label">Garantia ao comprador</div></div>
       <div class="num"><div class="num-val">∞</div><div class="num-label">Acesso vitalício</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CADASTRO KIWIFY -->
+<section class="section">
+  <div class="c">
+    <p class="sec-tag">Primeiro passo</p>
+    <h2>Faça seu cadastro como afiliado</h2>
+    <p class="sec-sub">Leva menos de 5 minutos. Depois do cadastro seu link já fica disponível.</p>
+    <div class="block" style="text-align:center">
+      <div style="font-size:40px;margin-bottom:16px">🔗</div>
+      <p style="font-size:15px;color:var(--txt2);margin-bottom:28px;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.7">Clique no botão abaixo, crie sua conta na Kiwify e solicite para ser afiliado do <strong style="color:var(--txt)">Aprova Prefeitura</strong>. O acesso ao produto é liberado logo após a aprovação.</p>
+      <a href="SEU_LINK_KIWIFY_AQUI" target="_blank" style="display:inline-flex;max-width:380px;text-decoration:none;background:var(--g);color:#000;font-weight:800;font-size:16px;padding:20px 40px;border-radius:8px;align-items:center;justify-content:center;gap:10px;transition:transform .15s,box-shadow .15s" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 14px 40px rgba(0,229,122,.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        CADASTRAR NA KIWIFY <span style="font-size:18px">→</span>
+      </a>
+      <p style="margin-top:14px;font-size:12px;color:var(--txt3)">Gratuito · Sem cartão · Aprovação rápida</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMISSÃO -->
+<section class="section">
+  <div class="c">
+    <p class="sec-tag">Comissão</p>
+    <h2>Quanto você ganha</h2>
+    <p class="sec-sub">Por cada venda gerada pelo seu link.</p>
+    <div class="comm-box">
+      <div class="comm-big">R$15</div>
+      <div class="comm-label">por venda · 40% de comissão sobre R$37,99</div>
+      <div class="comm-detail">10 vendas = R$150 &nbsp;·&nbsp; 50 vendas = R$760 &nbsp;·&nbsp; 100 vendas = R$1.520</div>
+    </div>
+  </div>
+</section>
+
+<!-- LINK -->
+<section class="section">
+  <div class="c">
+    <p class="sec-tag">Seu link</p>
+    <h2>Seu link de afiliado</h2>
+    <p class="sec-sub">Gerado após o cadastro na Kiwify. Substitua abaixo quando tiver.</p>
+    <div class="link-box">
+      <div class="link-url">https://<span>seulink.aprova</span>prefeitura.com.br/<span>?ref=SEUNOME</span></div>
+      <button class="copy-btn" style="flex-shrink:0" onclick="alert('Substitua pelo seu link real da plataforma.')">⧉ Copiar</button>
     </div>
   </div>
 </section>
@@ -140,7 +192,6 @@ footer a:hover{color:var(--g)}
     <h2>Copie e use agora</h2>
     <p class="sec-sub">Adapte o que quiser — o essencial já está aqui.</p>
 
-    <!-- STORIES -->
     <div class="block">
       <div class="block-label">📱 Stories — 3 frames</div>
       <div class="frames">
@@ -154,56 +205,70 @@ footer a:hover{color:var(--g)}
         </div>
         <div class="frame">
           <div class="frame-num">3</div>
-          <p><strong>CTA</strong><br><br>"Link na bio. O método que faltava pra sua primeira aprovação."</p>
+          <p><strong>CTA</strong><br><br>"Link na bio / arrasta pra cima. Quem estuda com método chega lá primeiro."</p>
         </div>
       </div>
       <button class="copy-btn" onclick="copyText('stories', this)">⧉ Copiar texto dos frames</button>
     </div>
 
-    <!-- REELS / VIDEO CURTO -->
     <div class="block">
       <div class="block-label">🎬 Reels / TikTok — roteiro</div>
-      <div class="copy-box" id="reels">
-[0–3s — GANCHO]
+      <textarea class="copy-box" id="reels" rows="9" readonly>[0–3s — GANCHO]
 "Se você estuda pra concurso municipal e não tem um método, está perdendo tempo."
 
 [3–12s — PROBLEMA]
-"A maioria estuda tudo igual, sem saber o que cai mais, sem plano, sem estratégia. E reprova não por falta de esforço, mas por não ter método."
+"A maioria estuda tudo igual, sem saber o que cai mais, sem plano, sem estratégia. E reprova não por falta de esforço — por falta de método."
 
 [12–22s — SOLUÇÃO]
 "O Aprova Prefeitura é um curso de estratégia de estudos. Ele te ensina a analisar edital, montar plano de estudos e usar IA pra revisar mais rápido. São 10 aulas, acesso vitalício, por R$37,99."
 
 [22–28s — CTA]
-"Link na bio. Garantia de 7 dias — se não gostar, devolvem tudo."</div>
+"Link na bio. Quem estuda com método passa. Quem estuda sem método tenta de novo."</textarea>
       <button class="copy-btn" onclick="copyId('reels', this)">⧉ Copiar roteiro</button>
     </div>
 
-    <!-- LEGENDA -->
     <div class="block">
       <div class="block-label">✍️ Legenda para feed / carrossel</div>
-      <div class="copy-box" id="legenda">Você estuda pra concurso municipal mas sente que falta alguma coisa?
+      <textarea class="copy-box" id="legenda" rows="11" readonly>Você não reprova por falta de esforço.
 
-Provavelmente é método. Não é esforço — é estratégia.
+Reprova porque estuda tudo igual, sem estratégia, sem plano, sem saber o peso de cada matéria.
 
-Encontrei o Aprova Prefeitura: um curso de R$37,99 focado em te ensinar a estudar certo pra concursos de prefeitura, câmara e autarquias.
+O Aprova Prefeitura resolve exatamente isso. R$37,99. Acesso vitalício.
 
 ✔ 10 videoaulas com método completo
 ✔ Checklist e plano de estudos prontos
 ✔ 15 prompts de IA testados pra revisão
-✔ Acesso vitalício + garantia de 7 dias
 
-Link na bio. Por esse preço, não tem desculpa. 👇</div>
+Link na bio. 👇</textarea>
       <button class="copy-btn" onclick="copyId('legenda', this)">⧉ Copiar legenda</button>
     </div>
 
-    <!-- DESCRIÇÃO YOUTUBE -->
     <div class="block">
       <div class="block-label">▶️ Descrição / menção em vídeo YouTube</div>
-      <div class="copy-box" id="yt">🔗 APROVA PREFEITURA — Curso de método e estratégia pra concursos municipais
+      <textarea class="copy-box" id="yt" rows="4" readonly>🔗 APROVA PREFEITURA — Curso de método e estratégia pra concursos municipais
 👉 [SEU LINK AQUI]
 
-Por R$37,99 você tem acesso a 10 aulas, checklist, plano de estudos e pack de prompts de IA pra revisar mais rápido. Garantia total de 7 dias.</div>
+Por R$37,99 você tem acesso a 10 aulas, checklist, plano de estudos e pack de prompts de IA pra revisar mais rápido. Acesso vitalício.</textarea>
       <button class="copy-btn" onclick="copyId('yt', this)">⧉ Copiar descrição</button>
+    </div>
+  </div>
+</section>
+
+<!-- LIBERDADE CRIATIVA -->
+<section class="section">
+  <div class="c">
+    <p class="sec-tag">Divulgação</p>
+    <h2>Use sua voz, não a nossa</h2>
+    <p class="sec-sub">Os scripts são ponto de partida — não roteiro obrigatório.</p>
+    <div class="block">
+      <p style="font-size:15px;color:var(--txt2);line-height:1.75;margin-bottom:18px">Sua audiência te segue por <strong style="color:var(--txt)">como você fala</strong>, não pelo que você copia. Adapte os textos ao seu estilo, use sua experiência com estudos — isso converte mais do que qualquer script pronto.</p>
+      <div class="rules">
+        <div class="rule"><div class="rule-icon">✅</div><div>Adapte o texto ao seu jeito de falar</div></div>
+        <div class="rule"><div class="rule-icon">✅</div><div>Use experiências próprias com estudos e concursos</div></div>
+        <div class="rule"><div class="rule-icon">✅</div><div>Crie formatos diferentes — carrossel, vídeo longo, live</div></div>
+        <div class="rule"><div class="rule-icon">❌</div><div>Não altere preço, prazo de garantia ou o que está incluso no produto</div></div>
+        <div class="rule"><div class="rule-icon">❌</div><div>Não prometa aprovação garantida — o produto é de método, não de conteúdo</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -214,11 +279,9 @@ Por R$37,99 você tem acesso a 10 aulas, checklist, plano de estudos e pack de p
     <p class="sec-tag">Regras da parceria</p>
     <h2>Simples e transparente</h2>
     <p class="sec-sub">Sem letras miúdas.</p>
-
     <div class="block">
       <div class="rules">
         <div class="rule"><div class="rule-icon">✅</div><div>Use <strong>sempre o seu link personalizado</strong> — é assim que as comissões são rastreadas automaticamente.</div></div>
-        <div class="rule"><div class="rule-icon">✅</div><div>Você pode adaptar os scripts à sua linguagem — o importante é manter as informações corretas (preço, garantia, o que está incluso).</div></div>
         <div class="rule"><div class="rule-icon">✅</div><div>Pagamento automático pela plataforma — sem depender de transferência manual.</div></div>
         <div class="rule"><div class="rule-icon">✅</div><div>Sem exclusividade — você pode divulgar outros produtos sem problema.</div></div>
         <div class="rule"><div class="rule-icon">❌</div><div>Não altere o preço ou as condições do produto nas divulgações.</div></div>
@@ -229,30 +292,41 @@ Por R$37,99 você tem acesso a 10 aulas, checklist, plano de estudos e pack de p
   </div>
 </section>
 
-<!-- COMISSÃO -->
+<!-- FAQ -->
 <section class="section">
   <div class="c">
-    <p class="sec-tag">Comissão</p>
-    <h2>Quanto você ganha</h2>
-    <p class="sec-sub">Por cada venda gerada pelo seu link.</p>
-
-    <div class="comm-box">
-      <div class="comm-big">R$15</div>
-      <div class="comm-label">por venda · 40% de comissão sobre R$37,99</div>
-      <div class="comm-detail">10 vendas = R$150 &nbsp;·&nbsp; 50 vendas = R$760 &nbsp;·&nbsp; 100 vendas = R$1.520</div>
-    </div>
-  </div>
-</section>
-
-<!-- LINK -->
-<section class="section">
-  <div class="c">
-    <p class="sec-tag">Seu link</p>
-    <h2>Substitua pelo link real</h2>
-    <p class="sec-sub">Gerado pela Hotmart ou Kiwify após cadastro como afiliado.</p>
-    <div class="link-box">
-      <div class="link-url">https://<span>seulink.aprova</span>prefeitura.com.br/<span>?ref=SEUNOME</span></div>
-      <button class="copy-btn" style="flex-shrink:0" onclick="alert('Substitua pelo seu link real da plataforma.')">⧉ Copiar</button>
+    <p class="sec-tag">Dúvidas frequentes</p>
+    <h2>FAQ do afiliado</h2>
+    <p class="sec-sub">As perguntas mais comuns antes de começar.</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <details class="faq-item">
+        <summary>Quando recebo minha comissão?</summary>
+        <p>O pagamento é processado automaticamente pela plataforma após o período de garantia de 7 dias. Você não depende de transferência manual.</p>
+      </details>
+      <details class="faq-item">
+        <summary>E se o comprador pedir reembolso?</summary>
+        <p>A comissão da venda estornada é descontada automaticamente. É raro acontecer — o ticket baixo reduz muito esse índice.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Preciso avisar antes de postar?</summary>
+        <p>Não. Pode postar quando quiser. Se tiver dúvida sobre algum conteúdo específico, pode nos consultar — mas não é obrigatório.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Posso divulgar em mais de uma plataforma?</summary>
+        <p>Sim. Use o mesmo link em todas. Instagram, TikTok, YouTube, Twitter — sem restrição de canal.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Posso divulgar outros produtos ao mesmo tempo?</summary>
+        <p>Sim. Não há exclusividade. Só pedimos que não divulgue concorrentes diretos no mesmo post.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Preciso me cadastrar em algum lugar?</summary>
+        <p>Sim — na Kiwify como afiliado do produto. Leva menos de 5 minutos. O link está no topo desta página.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Tenho que comprar o produto pra divulgar?</summary>
+        <p>Não. Você recebe acesso completo e gratuito. Só divulgue se gostar — sua credibilidade importa.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -276,26 +350,36 @@ Por R$37,99 você tem acesso a 10 aulas, checklist, plano de estudos e pack de p
 </footer>
 
 <script>
-const storiesText = `FRAME 1:\n"Você estuda pra concurso municipal mas sente que não avança?"\n\nFRAME 2:\n"Encontrei um curso de R$37 que ensina exatamente o método que faltava. Testei — vale demais."\n\nFRAME 3:\n"Link na bio / arrasta pra cima. Garantia de 7 dias — zero risco pra você."`;
+const storiesText = `FRAME 1:
+"Você estuda pra concurso municipal mas sente que não avança?"
 
-function copyText(type, btn) {
-  let text = '';
-  if(type === 'stories') text = storiesText;
-  navigator.clipboard.writeText(text).then(()=>{
-    btn.textContent = '✓ Copiado!';
-    btn.classList.add('copied');
-    setTimeout(()=>{ btn.textContent = '⧉ Copiar texto dos frames'; btn.classList.remove('copied'); }, 2000);
-  });
-}
+FRAME 2:
+"Encontrei um curso de R$37 que ensina exatamente o método que faltava. Testei — vale demais."
+
+FRAME 3:
+"Link na bio / arrasta pra cima. Garantia de 7 dias — zero risco pra você."`;
 
 function copyId(id, btn) {
   const el = document.getElementById(id);
-  navigator.clipboard.writeText(el.innerText).then(()=>{
-    const orig = btn.textContent;
-    btn.textContent = '✓ Copiado!';
-    btn.classList.add('copied');
-    setTimeout(()=>{ btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
-  });
+  el.select();
+  document.execCommand('copy');
+  const orig = btn.textContent;
+  btn.textContent = '✓ Selecionado & copiado!';
+  btn.classList.add('copied');
+  setTimeout(()=>{ btn.textContent = orig; btn.classList.remove('copied'); }, 2500);
+}
+
+function copyText(type, btn) {
+  const ta = document.createElement('textarea');
+  ta.value = type === 'stories' ? storiesText : '';
+  ta.style.cssText = 'position:fixed;opacity:0';
+  document.body.appendChild(ta);
+  ta.select();
+  document.execCommand('copy');
+  document.body.removeChild(ta);
+  btn.textContent = '✓ Copiado!';
+  btn.classList.add('copied');
+  setTimeout(()=>{ btn.textContent = '⧉ Copiar texto dos frames'; btn.classList.remove('copied'); }, 2500);
 }
 </script>
 </body>
